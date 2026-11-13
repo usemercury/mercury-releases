@@ -54,7 +54,8 @@ without an Azure namespace.
 
 Use **Diagnostics** at the bottom of the sidebar: it copies the version,
 platform and recent log lines (no secrets) to paste into a bug report.
-Open an issue in this repository with it.
+Open an [issue in this repository](../../issues/new) with it, saying what
+you did, what you expected and what happened instead.
 
 ## Licence
 

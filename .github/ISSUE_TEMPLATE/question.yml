@@ -1,0 +1,10 @@
+name: Question or idea
+description: Ask how to do something, or suggest a feature.
+body:
+  - type: textarea
+    id: text
+    attributes:
+      label: Your question or idea
+      description: This issue is public; do not include keys or names of your systems.
+    validations:
+      required: true

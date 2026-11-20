@@ -1,0 +1,3 @@
+# Blank issues stay on: Mercury's "Report on GitHub…" opens a new issue
+# with the title and report in the link, which must not be turned away.
+blank_issues_enabled: true

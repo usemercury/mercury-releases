@@ -1,0 +1,45 @@
+name: Bug report
+description: Something in Mercury does not work as it should.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. The quickest way is **Report on GitHub…** next to the error in Mercury: it fills this in for you, with names replaced.
+
+        This issue is **public**. Do not paste keys, connection strings, message contents, or names of your namespaces and queues.
+  - type: input
+    id: version
+    attributes:
+      label: Mercury version
+      description: Shown at the bottom of the connections screen, e.g. 0.2.0.
+      placeholder: "0.2.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options:
+        - Windows
+        - macOS
+        - Linux
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What did you do, and what happened?
+      description: The steps, what you expected, and what Mercury did instead.
+      placeholder: |
+        1. Opened a queue and ticked two messages
+        2. Chose Move selected… to another queue
+        3. Expected them to move; got the error "…"
+    validations:
+      required: true
+  - type: textarea
+    id: report
+    attributes:
+      label: Report
+      description: |
+        In Mercury, choose **Copy report** next to the error (or on the crash notice) and paste it here. Check it first for names you do not want to share.
+      render: text

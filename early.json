@@ -1,0 +1,59 @@
+{
+  "version": "0.3.1",
+  "notes": "## What's new\r\n\r\n- **Search all looks through the whole queue.** It used to stop after 500\r\n  matches. Now it searches every message (up to 200,000), says how many\r\n  match in total, and shows the first 500. **Resubmit found**, **Copy\r\n  found…** and **Move found…** act on every match, not only those shown.\r\n- **Resubmit and delete reach deep into large dead-letter queues.** Picking\r\n  messages far back in a dead-letter queue used to stop after 2,000\r\n  messages in front of them. Mercury now gets through the whole queue,\r\n  taking several passes on a very large one if it has to.\r\n\r\n## Fixes\r\n\r\n- **\"Resubmit all\" no longer silently does nothing.** In a dead-letter queue,\r\n  it could show its progress bar for a moment and then report \"Resubmitted 0\r\n  messages\" when the messages were locked elsewhere, for example by\r\n  Mercury's own Receive view in another tab. Mercury now tries again, and if\r\n  the messages are still locked it says how many are locked and how many it\r\n  did, so you know to release them (close the Receive view, or wait for the\r\n  locks to expire) and run it again.\r\n- The same applies to every operation that removes or moves many messages\r\n  at once: Delete, Dead-letter, Resubmit and settling in bulk.\r\n- A message you selected that is locked by someone else, or that is too far\r\n  back in a busy queue to reach, is no longer reported as \"no longer there\".\r\n  Stopping an operation no longer reports the rest as missing either.\r\n- If a bulk operation fails part way, the messages it was holding are\r\n  released straight away instead of staying locked until their locks expire.\r\n- **Update notes in the title bar** no longer vanish early or stay forever\r\n  when the automatic check runs at the same time as **Check for updates**.\r\n\nSee the README for install instructions, including the first-run security prompts on Windows and macOS.",
+  "pub_date": "2026-11-24T19:37:39.231Z",
+  "platforms": {
+    "darwin-aarch64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRQkJERlBzbHlIMzloY0wwcjNhbVBKVG1FY1RyWXBIWEp2allGVTJZYjBIeVpldDVSNWd3VkdaS1pRakpOcDcrMXBjM29tUTIzdmFCRVA5Q0sxajJKRGtNSHNZV2N4dGdjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1NTQ4NTE1CWZpbGU6TWVyY3VyeS5hcHAudGFyLmd6CXZlcnNpb246MC4zLjEKUGpLanllRlowcFE5M2FlZ3RuU3Q1bGwxWEhPYUpnOEFmM2hBUEFFU2pPMDc3VU10b3AvQ2d3YW0rMzFQMjI1cnVlbzZJL2ZIVCtQenBHZkxGNkhRQ2c9PQo=",
+      "url": "https://github.com/usemercury/mercury-releases/releases/download/v0.3.1/Mercury_universal.app.tar.gz"
+    },
+    "darwin-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRQkJERlBzbHlIMzloY0wwcjNhbVBKVG1FY1RyWXBIWEp2allGVTJZYjBIeVpldDVSNWd3VkdaS1pRakpOcDcrMXBjM29tUTIzdmFCRVA5Q0sxajJKRGtNSHNZV2N4dGdjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1NTQ4NTE1CWZpbGU6TWVyY3VyeS5hcHAudGFyLmd6CXZlcnNpb246MC4zLjEKUGpLanllRlowcFE5M2FlZ3RuU3Q1bGwxWEhPYUpnOEFmM2hBUEFFU2pPMDc3VU10b3AvQ2d3YW0rMzFQMjI1cnVlbzZJL2ZIVCtQenBHZkxGNkhRQ2c9PQo=",
+      "url": "https://github.com/usemercury/mercury-releases/releases/download/v0.3.1/Mercury_universal.app.tar.gz"
+    },
+    "darwin-aarch64-app": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRQkJERlBzbHlIMzloY0wwcjNhbVBKVG1FY1RyWXBIWEp2allGVTJZYjBIeVpldDVSNWd3VkdaS1pRakpOcDcrMXBjM29tUTIzdmFCRVA5Q0sxajJKRGtNSHNZV2N4dGdjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1NTQ4NTE1CWZpbGU6TWVyY3VyeS5hcHAudGFyLmd6CXZlcnNpb246MC4zLjEKUGpLanllRlowcFE5M2FlZ3RuU3Q1bGwxWEhPYUpnOEFmM2hBUEFFU2pPMDc3VU10b3AvQ2d3YW0rMzFQMjI1cnVlbzZJL2ZIVCtQenBHZkxGNkhRQ2c9PQo=",
+      "url": "https://github.com/usemercury/mercury-releases/releases/download/v0.3.1/Mercury_universal.app.tar.gz"
+    },
+    "darwin-x86_64-app": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRQkJERlBzbHlIMzloY0wwcjNhbVBKVG1FY1RyWXBIWEp2allGVTJZYjBIeVpldDVSNWd3VkdaS1pRakpOcDcrMXBjM29tUTIzdmFCRVA5Q0sxajJKRGtNSHNZV2N4dGdjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1NTQ4NTE1CWZpbGU6TWVyY3VyeS5hcHAudGFyLmd6CXZlcnNpb246MC4zLjEKUGpLanllRlowcFE5M2FlZ3RuU3Q1bGwxWEhPYUpnOEFmM2hBUEFFU2pPMDc3VU10b3AvQ2d3YW0rMzFQMjI1cnVlbzZJL2ZIVCtQenBHZkxGNkhRQ2c9PQo=",
+      "url": "https://github.com/usemercury/mercury-releases/releases/download/v0.3.1/Mercury_universal.app.tar.gz"
+    },
+    "windows-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRQkJERlBzbHlIMzIrMFJDS3VybGwva2tWK0dUb3p5WE4vOUc4ZGJiS1dNbWplVG0yejFIaExLNHZHTjNYcThmWUxMRzczb1ZKUm1QdkhiaFhrRG9GZEg2UTVza1BJMHdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1NTQ5MDAzCWZpbGU6TWVyY3VyeV8wLjMuMV94NjRfZW4tVVMubXNpCXZlcnNpb246MC4zLjEKS3JYMnN2K2VGaVZGQXlidWhETlAxZWU2emRQaUh5RkpBM29MWVN2UGg1RlJHYnNWUW1tTGg0Qkh4cmRjTTZ2N0Vxc0I2M1RWNVBQNWs3ZDUySVp3Q0E9PQo=",
+      "url": "https://github.com/usemercury/mercury-releases/releases/download/v0.3.1/Mercury_0.3.1_x64_en-US.msi"
+    },
+    "windows-x86_64-msi": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRQkJERlBzbHlIMzIrMFJDS3VybGwva2tWK0dUb3p5WE4vOUc4ZGJiS1dNbWplVG0yejFIaExLNHZHTjNYcThmWUxMRzczb1ZKUm1QdkhiaFhrRG9GZEg2UTVza1BJMHdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1NTQ5MDAzCWZpbGU6TWVyY3VyeV8wLjMuMV94NjRfZW4tVVMubXNpCXZlcnNpb246MC4zLjEKS3JYMnN2K2VGaVZGQXlidWhETlAxZWU2emRQaUh5RkpBM29MWVN2UGg1RlJHYnNWUW1tTGg0Qkh4cmRjTTZ2N0Vxc0I2M1RWNVBQNWs3ZDUySVp3Q0E9PQo=",
+      "url": "https://github.com/usemercury/mercury-releases/releases/download/v0.3.1/Mercury_0.3.1_x64_en-US.msi"
+    },
+    "windows-x86_64-nsis": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRQkJERlBzbHlIMzBCTDgyY3JQaDY5dXAxeC9jK0ZIZDlyYStLdkZsc3BFeU5QbDAvbVVjUDQvemVSaTFia25aV29FaW1PckY0RTU2aldPUTI0d2RqQ1p0NEp3TDJOTnd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1NTQ5MDAzCWZpbGU6TWVyY3VyeV8wLjMuMV94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4zLjEKNDJjQXNrcDZWaEdIWFFScFpQSERsN0JYbnBxd0tzNzZwdGRnVUd1NVdYZ21WWEJDOWU4a083a0NMOXZ5L0ROMTViZHF2aTJydE4zdDhBNXVwdzFvQnc9PQo=",
+      "url": "https://github.com/usemercury/mercury-releases/releases/download/v0.3.1/Mercury_0.3.1_x64-setup.exe"
+    },
+    "linux-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRQkJERlBzbHlIMzJzQW9LWW5uMENrc21IQXBFdGZkaVhFMmVmM3NHT0tCd2hrdHZRVnN6UzdxN2dTUWJPSVYzVWNqYTI1Q0laY01kcGtkdmI4emFQTjh6NDZTR09vcGdzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1NTQ5MDE4CWZpbGU6TWVyY3VyeV8wLjMuMV9hbWQ2NC5BcHBJbWFnZQl2ZXJzaW9uOjAuMy4xCkJvVFpqRXpESFZqUUluNlR1U29IRHlQNXQxT01uSS84d1A0c3BwNi8vV01XY2VwNldYSTdDUUVodmZjR2lGNlE0WUZ1T0JLUGsvaG5CZkIzbHNWYUJRPT0K",
+      "url": "https://github.com/usemercury/mercury-releases/releases/download/v0.3.1/Mercury_0.3.1_amd64.AppImage"
+    },
+    "linux-x86_64-appimage": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRQkJERlBzbHlIMzJzQW9LWW5uMENrc21IQXBFdGZkaVhFMmVmM3NHT0tCd2hrdHZRVnN6UzdxN2dTUWJPSVYzVWNqYTI1Q0laY01kcGtkdmI4emFQTjh6NDZTR09vcGdzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1NTQ5MDE4CWZpbGU6TWVyY3VyeV8wLjMuMV9hbWQ2NC5BcHBJbWFnZQl2ZXJzaW9uOjAuMy4xCkJvVFpqRXpESFZqUUluNlR1U29IRHlQNXQxT01uSS84d1A0c3BwNi8vV01XY2VwNldYSTdDUUVodmZjR2lGNlE0WUZ1T0JLUGsvaG5CZkIzbHNWYUJRPT0K",
+      "url": "https://github.com/usemercury/mercury-releases/releases/download/v0.3.1/Mercury_0.3.1_amd64.AppImage"
+    },
+    "linux-x86_64-deb": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRQkJERlBzbHlIMzJFdXk0WVorUlNsdzJqTXo5V20wMFB4a3h3eGgzMTVwWFRxSnlTUTJaL0NQRU81dDdOdi9uUUE2OUQ5elloVHYwWG5GUndvR3QrY05Ub2Z6QVZJeWdvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1NTQ5MDE4CWZpbGU6TWVyY3VyeV8wLjMuMV9hbWQ2NC5kZWIJdmVyc2lvbjowLjMuMQpFZGQwc2ZUbFJaNWI2VEFWYVU1WUZaekVvbGZWSHdGWWttQnB1aWplN2VlbXB2VmRrL2V4WllKUjFNbVc2TmRnY0ZVNWZRUUFRMzMvd3JlZ3ROcVRDQT09Cg==",
+      "url": "https://github.com/usemercury/mercury-releases/releases/download/v0.3.1/Mercury_0.3.1_amd64.deb"
+    },
+    "linux-x86_64-rpm": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRQkJERlBzbHlIM3lHYnpFVXJNcml1ZFNuWjZBcW53d0xTR3B3V3JsYk9IK0IvWk1WQU1taHhGMVNmSUovd0ZoL2JFaklNbXVISnJLNE9SWXhtMVBFa1JZZHFoblB2WGdzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1NTQ5MDE4CWZpbGU6TWVyY3VyeS0wLjMuMS0xLng4Nl82NC5ycG0JdmVyc2lvbjowLjMuMQowcTA2M0hzVVViWnFxbWUvUFNqTTJyMXlkVTliL05yTmprNmIrZCtQQWFmaUlOMXFRRjkrSUVDa0JSSnpkN1JNdVF3cE5LdWFWU2hxM1FFcS8yempBZz09Cg==",
+      "url": "https://github.com/usemercury/mercury-releases/releases/download/v0.3.1/Mercury-0.3.1-1.x86_64.rpm"
+    },
+    "windows-aarch64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRQkJERlBzbHlIMzY4NzMvMjl1WGl2cENFQTliWW16cEw5VTZEUzNVRXFUTHNzN3JqWkJGN3AvOHFFMUt3RXZpS3VsSmF0MHB4T3VBQjk3M2dCaHk0bEF6SHl3RFpqVXd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1NTQ5MDU1CWZpbGU6TWVyY3VyeV8wLjMuMV9hcm02NC1zZXR1cC5leGUJdmVyc2lvbjowLjMuMQpiK0xCbFhIMEJGa1R6QWRxUjJrcURQTVVhay9HK3NiOGVjNncyNFoxRmhIOTd0My96VmFXZldNWUpWL1h1QnFqNktzWDdScE9BUDQyVnEvcklOa01BQT09Cg==",
+      "url": "https://github.com/usemercury/mercury-releases/releases/download/v0.3.1/Mercury_0.3.1_arm64-setup.exe"
+    },
+    "windows-aarch64-nsis": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRQkJERlBzbHlIMzY4NzMvMjl1WGl2cENFQTliWW16cEw5VTZEUzNVRXFUTHNzN3JqWkJGN3AvOHFFMUt3RXZpS3VsSmF0MHB4T3VBQjk3M2dCaHk0bEF6SHl3RFpqVXd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1NTQ5MDU1CWZpbGU6TWVyY3VyeV8wLjMuMV9hcm02NC1zZXR1cC5leGUJdmVyc2lvbjowLjMuMQpiK0xCbFhIMEJGa1R6QWRxUjJrcURQTVVhay9HK3NiOGVjNncyNFoxRmhIOTd0My96VmFXZldNWUpWL1h1QnFqNktzWDdScE9BUDQyVnEvcklOa01BQT09Cg==",
+      "url": "https://github.com/usemercury/mercury-releases/releases/download/v0.3.1/Mercury_0.3.1_arm64-setup.exe"
+    }
+  }
+}
